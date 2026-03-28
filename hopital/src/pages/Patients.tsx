@@ -54,18 +54,18 @@ export const Patients = () => {
     const [ouvert, setOuvert] = useState<number | null>(null);
 
     return (
-        <section className="py-20 bg-white">
+        <section id="patients" className="py-20 bg-white">
 
             {/* ── EN-TÊTE ── */}
-            <div className="text-center mb-16 px-4">
+            <div className="text-center mb-16 px-6">
                 <span className="badge badge-primary badge-outline mb-3 text-sm uppercase tracking-widest">
                     Patients & Visiteurs
                 </span>
-                <h2 className="text-4xl font-bold mb-4">
+                <h2 className="text-6xl font-bold mb-4 mt-5">
                     Votre bien-être,{" "}
                     <span className="text-blue-500">notre priorité</span>
                 </h2>
-                <p className="text-base-content/60 max-w-lg mx-auto">
+                <p className="text-base-content/60 max-w-lg mx-auto mt-10 text-1xl">
                     De la prise de rendez-vous au suivi post-consultation, nous vous
                     accompagnons à chaque étape de votre parcours de soins.
                 </p>
@@ -77,7 +77,7 @@ export const Patients = () => {
                 {/* Image */}
                 <div className="lg:w-1/2 w-full">
                     <img
-                        src="/hop11.jpg"
+                        src="/hop19.jpg"
                         alt="Patiente souriante"
                         className="w-full h-full object-cover rounded-2xl lg:rounded-r-none lg:rounded-l-2xl shadow-lg"
                         style={{ minHeight: "380px", maxHeight: "500px" }}
@@ -85,8 +85,8 @@ export const Patients = () => {
                 </div>
 
                 {/* Infos pratiques */}
-                <div className="lg:w-1/2 w-full bg-blue-600 text-white rounded-2xl lg:rounded-l-none lg:rounded-r-2xl p-8 flex flex-col justify-center gap-5">
-                    <h3 className="text-2xl font-bold mb-2">Informations pratiques</h3>
+                <div className="lg:w-1/2 w-full bg-blue-700 text-white rounded-2xl lg:rounded-l-none lg:rounded-r-2xl p-8 flex flex-col justify-center gap-5">
+                    <h3 className="text-5xl font-bold mb-10">Informations pratiques</h3>
 
                     {[
                         {
@@ -140,9 +140,10 @@ export const Patients = () => {
 
             {/* ── PARCOURS PATIENT ── */}
             <div className="px-6 lg:px-20 mb-20">
-                <h3 className="text-2xl font-bold text-center mb-20">
+                <h3 className="text-5xl font-bold text-center mb-20">
                     Votre <span className="text-blue-500">parcours patient</span> en 4 étapes
                 </h3>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {etapes.map((e) => (
                         <div key={e.num} className="relative card bg-base-100 border border-base-200 shadow hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
@@ -151,9 +152,9 @@ export const Patients = () => {
                             <span className="absolute top-3 right-4 text-5xl font-black text-blue-50 select-none">{e.num}</span>
                             <div className="card-body">
                                 <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-3">
-                                    <i className={`${e.icon} text-blue-500 text-xl`}></i>
+                                    <i className={`${e.icon} text-blue-500 text-5xl`}></i>
                                 </div>
-                                <h4 className="font-bold text-base">{e.titre}</h4>
+                                <h4 className="font-bold text-2xl">{e.titre}</h4>
                                 <p className="text-base-content/70 text-sm">{e.desc}</p>
                             </div>
                         </div>
@@ -163,23 +164,26 @@ export const Patients = () => {
 
             {/* ── FAQ ── */}
             <div className="px-6 lg:px-20 mb-20">
-                <h3 className="text-2xl font-bold text-center mb-10">
+                <h3 className="text-5xl font-bold text-center mb-10">
                     Questions <span className="text-blue-500">fréquentes</span>
                 </h3>
+
                 <div className="max-w-3xl mx-auto flex flex-col gap-3">
                     {faqs.map((faq, i) => (
                         <div key={i} className="border border-base-200 rounded-xl overflow-hidden shadow-sm">
+
                             {/* Question cliquable */}
                             <button
                                 onClick={() => setOuvert(ouvert === i ? null : i)}
-                                className="w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-base-content hover:bg-blue-50 transition-colors duration-200"
+                                className="text-3xl w-full flex items-center justify-between px-5 py-4 text-left font-semibold text-base-content hover:bg-blue-50 transition-colors duration-200"
                             >
                                 <span>{faq.q}</span>
                                 <i className={`fa-solid fa-chevron-down text-blue-400 transition-transform duration-300 ${ouvert === i ? "rotate-180" : ""}`}></i>
                             </button>
+
                             {/* Réponse (visible si ouverte) */}
                             {ouvert === i && (
-                                <div className="px-5 pb-4 text-base-content/70 text-sm leading-relaxed">
+                                <div className="text-2xl px-10 pb-2 text-base-content/70 leading-relaxed">
                                     {faq.r}
                                 </div>
                             )}
@@ -195,12 +199,12 @@ export const Patients = () => {
                         <i className="fa-solid fa-phone-volume text-white text-2xl"></i>
                     </div>
                     <div>
-                        <p className="text-white/80 text-sm mb-1">Ligne d'urgence — disponible 24h/24 et 7j/7</p>
-                        <p className="text-3xl font-black tracking-wide">01 23 45 67 89</p>
+                        <p className="text-white/80 text-2xl mb-1">Ligne d'urgence — disponible 24h/24 et 7j/7</p>
+                        <p className="mt-5 text-3xl font-black tracking-wide">+225 0502165736</p>
                     </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
-                    <a href="tel:0123456789" className="btn bg-white text-blue-600 hover:bg-blue-50 font-semibold border-none">
+                    <a href="tel:+225 0502165736" className="btn bg-white text-blue-600 hover:bg-blue-50 font-semibold border-none">
                         <i className="fa-solid fa-phone mr-2"></i> Appeler maintenant
                     </a>
                     <a href="#" className="btn btn-outline border-white text-white hover:bg-white hover:text-blue-600 font-semibold">

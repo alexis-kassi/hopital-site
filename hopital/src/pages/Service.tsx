@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export const Service = () => {
+    // Service carte
     const services = [
         {
             icon: "fa-solid fa-heart-pulse",
@@ -35,59 +36,63 @@ export const Service = () => {
     ];
 
     return (
-        <section className="py-16 bg-base-100">
+        <section id="service" className="py-16 bg-base-100">
 
             {/* En-tête de section */}
-            <div className="text-center mb-12 px-4">
-                <span className="badge badge-primary badge-outline mb-3 text-sm uppercase tracking-widest">
+            <div className="text-center mb-20 px-4">
+                <span className="badge badge-primary badge-outline mb-8 text-sm uppercase tracking-widest">
                     Nos Services
                 </span>
                 <h2 className="text-4xl font-bold mb-4">
                     Des soins de qualité,{" "}
                     <span className="text-blue-500">à votre service</span>
                 </h2>
-                <p className="text-base-content/70 max-w-xl mx-auto">
+                <p className="text-2xl text-base-content/70 max-w-xl mx-auto">
                     SantePlus met à votre disposition une équipe médicale expérimentée et
                     des équipements modernes pour vous offrir les meilleurs soins.
                 </p>
             </div>
+
 
             {/* Layout image + texte */}
             <div className="flex flex-col lg:flex-row items-center gap-10 px-6 lg:px-20 mb-16">
                 {/* Image */}
                 <div className="lg:w-1/2 w-full">
                     <img
-                        src="/hop10.jpg"
+                        src="/hop18.jpg"
                         alt="Médecin avec patient"
                         className="rounded-2xl shadow-xl w-full object-cover max-h-[480px]"
                     />
                 </div>
 
+
                 {/* Texte */}
                 <div className="lg:w-1/2 w-full">
-                    <h3 className="text-3xl font-bold mb-4">
+                    <h3 className="text-5xl font-bold mb-15">
                         Une prise en charge{" "}
                         <span className="text-blue-500">personnalisée</span>
                     </h3>
-                    <p className="text-base-content/70 mb-6 leading-relaxed">
+                    <p className="text-2xl text-base-content/70 mb-6 leading-relaxed">
                         Chez SantéPlus, chaque patient est unique. Nos équipes médicales
                         s'engagent à offrir une écoute attentive, un diagnostic précis et
                         un suivi rigoureux pour garantir votre guérison et votre bien-être.
                     </p>
-                    <ul className="space-y-3 mb-8">
+                    <ul className="space-y-3 mb-8 mt-10">
                         {[
                             "Équipe médicale certifiée et expérimentée",
                             "Matériel médical de dernière génération",
                             "Rendez-vous rapides et suivi en ligne",
                             "Urgences disponibles 24h/24 et 7j/7",
                         ].map((item) => (
-                            <li key={item} className="flex items-center gap-3 text-base-content/80">
+                            <li key={item} className="flex items-center gap-2 text-base-content/80">
                                 <i className="fa-solid fa-circle-check text-blue-500 text-lg shrink-0"></i>
                                 {item}
                             </li>
                         ))}
+
+                        {/* Bouton de rendez-vous */}
                     </ul>
-                    <a href="#" className="btn btn-primary px-8">
+                    <a href="#" className="btn btn-primary px-8 mt-10">
                         <i className="fa-solid fa-calendar-check mr-2"></i>
                         Prendre rendez-vous
                     </a>
@@ -107,7 +112,12 @@ export const Service = () => {
 };
 
 // Composant carte avec animation au scroll
-type ServiceItem = { icon: string; titre: string; desc: string };
+// Type service
+type ServiceItem = {
+    icon: string;
+    titre: string;
+    desc: string
+};
 
 const AnimatedCard = ({ service, index }: { service: ServiceItem; index: number }) => {
     const ref = useRef<HTMLDivElement>(null);
@@ -138,11 +148,12 @@ const AnimatedCard = ({ service, index }: { service: ServiceItem; index: number 
                     : "opacity-0 translate-y-8"
                 }`}
         >
-            <div className="card-body">
-                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center mb-3">
+            {/* Style de la carte */}
+            <div className="card-body w-80">
+                <div className="w-20 h-20 rounded-xl bg-blue-200 flex items-center justify-center mb-3">
                     <i className={`${service.icon} text-blue-500 text-xl`}></i>
                 </div>
-                <h4 className="card-title text-lg">{service.titre}</h4>
+                <h4 className="card-title text-3xl">{service.titre}</h4>
                 <p className="text-base-content/70 text-sm">{service.desc}</p>
             </div>
         </div>

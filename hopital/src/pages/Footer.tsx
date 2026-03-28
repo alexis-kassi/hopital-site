@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-gray-300">
+        <footer className="bg-gray-900 text-gray-300 mt-30">
 
             {/* ── CORPS DU FOOTER ── */}
             <div className="px-6 lg:px-20 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -8,8 +8,8 @@ const Footer = () => {
                 {/* Colonne 1 — Identité */}
                 <div>
                     <div className="flex items-center gap-2 mb-4">
-                        <img src="/favicon.svg" alt="Logo" className="h-8 w-8" />
-                        <span className="text-white text-xl font-bold">santéPlus</span>
+                        <img src="/favicon.ico" alt="Logo" className="h-15 w-15" />
+                        <span className="text-white text-5xl font-bold">santePlus</span>
                     </div>
                     <p className="text-sm leading-relaxed text-gray-400">
                         Votre hôpital de confiance à Koumassi, Abidjan. Des soins de qualité,
@@ -36,7 +36,7 @@ const Footer = () => {
 
                 {/* Colonne 2 — Navigation */}
                 <div>
-                    <h4 className="text-white font-semibold mb-4 uppercase tracking-widest text-xs">
+                    <h4 className="text-white font-semibold mb-4 uppercase tracking-widest text-2xl">
                         Navigation
                     </h4>
                     <ul className="space-y-2 text-sm">
@@ -56,7 +56,7 @@ const Footer = () => {
 
                 {/* Colonne 3 — Services */}
                 <div>
-                    <h4 className="text-white font-semibold mb-4 uppercase tracking-widest text-xs">
+                    <h4 className="text-white font-semibold mb-4 uppercase tracking-widest text-2xl">
                         Nos Spécialités
                     </h4>
                     <ul className="space-y-2 text-sm">
@@ -76,7 +76,7 @@ const Footer = () => {
 
                 {/* Colonne 4 — Contact */}
                 <div>
-                    <h4 className="text-white font-semibold mb-4 uppercase tracking-widest text-xs">
+                    <h4 className="text-white font-semibold mb-4 uppercase tracking-widest text-2xl">
                         Contact
                     </h4>
                     <ul className="space-y-4 text-sm">
@@ -97,7 +97,7 @@ const Footer = () => {
 
             {/* ── BARRE DE BAS ── */}
             <div className="border-t border-white/10 py-5 px-6 lg:px-20 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
-                <p>© {new Date().getFullYear()} santéPlus — Tous droits réservés.</p>
+                <p>© {new Date().getFullYear()} santePlus — Tous droits réservés.</p>
                 <div className="flex gap-5">
                     <a href="#" className="hover:text-blue-400 transition-colors">Mentions légales</a>
                     <a href="#" className="hover:text-blue-400 transition-colors">Politique de confidentialité</a>
